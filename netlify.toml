@@ -1,0 +1,10 @@
+[build]
+  # Install from the lockfile first so the build never depends on a pre-existing node_modules.
+  command = "npm ci --no-audit --no-fund && npm run build"
+  publish = "dist"
+
+# Client-side routing (React Router BrowserRouter): serve index.html for unknown paths.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
